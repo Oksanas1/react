@@ -11,7 +11,7 @@ function Profile(props) {
   return (
     <div className="profile">
       <h1 className='profile__name'>{ props.userData.firstName } { props.userData.lastName }</h1>
-      <p className='profile__birth'>`Was born { fromatDate(props.userData.birthDate) } in { props.userData.birthPlace }`</p>
+      <p className='profile__birth'>'Was born { fromatDate(props.userData.birthDate) } in { props.userData.birthPlace }'</p>
     </div>
   );
 }

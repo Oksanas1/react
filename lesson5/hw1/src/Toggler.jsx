@@ -17,6 +17,6 @@ export default class Counter extends Component {
   }
   
   render() {
-    return (<div className="toggler" onClick={ this.handleToggler }>{ this.state.isToggle ? 'On' : 'Off' } </div>);
+    return (<div className="toggler" onClick={ this.handleToggler }>{ this.state.isToggle ? 'On' : 'Off' }</div>);
   }
 }

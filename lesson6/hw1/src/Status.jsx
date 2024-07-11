@@ -4,7 +4,7 @@ import Offline from './Offline';
 
 export default class Page extends Component {
   state = {
-    isOnline: false,
+    isOnline: true,
   }
 
   render() {

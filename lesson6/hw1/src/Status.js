@@ -6,18 +6,21 @@ export default class Page extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isOnline: true
+      isOnline: true,
+      isOffline: false
     }
 
     window.addEventListener("offline", (e) => {
       this.setState({
         isOnline: false,
+        isOffline: true
       })
     });
     
     window.addEventListener("online", (e) => {
       this.setState({
         isOnline: true,
+        isOffline: false
       })
     });
   }

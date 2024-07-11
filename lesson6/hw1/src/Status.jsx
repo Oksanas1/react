@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Online from './Online';
-import Ofline from './Ofline';
+import Offline from './Offline';
 
 export default class Page extends Component {
   state = {
@@ -10,7 +10,7 @@ export default class Page extends Component {
   render() {
     return (
       <div className="status">
-        {this.state.isOnline ? <Online /> : <Ofline />}
+        {this.state.isOnline ? <Online /> : <Offline />}
       </div>
     );
   };

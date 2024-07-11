@@ -1,17 +1,35 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect }  from 'react';
 import Online from './Online';
 import Offline from './Offline';
 
-export default class Page extends Component {
-  state = {
-    isOnline: true,
-  }
+const useNetworkStatus = () => {
+  const [isOnline, setIsOnline] = useState(navigator.onLine);
 
-  render() {
-    return (
-      <div className="status">
-        {this.state.isOnline ? <Online /> : <Offline />}
-      </div>
-    );
-  };
+  useEffect(() => {
+    const updateNetworkStatus = () => {
+      setIsOnline(navigator.onLine);
+    };
+
+    window.addEventListener('online', updateNetworkStatus);
+    window.addEventListener('offline', updateNetworkStatus);
+
+    return () => {
+      window.removeEventListener('online', updateNetworkStatus);
+      window.removeEventListener('offline', updateNetworkStatus);
+    };
+  }, []);
+
+  return isOnline;
+};
+
+const Status = () => {
+  const isOnline = useNetworkStatus();
+
+  return (
+    <div className="status">
+      {isOnline ? <Online /> : <Offline />}
+    </div>
+  );
 }
+
+export default Status;

@@ -7,20 +7,17 @@ export default class Page extends Component {
     super(props);
     this.state = {
       isOnline: true,
-      isOffline: false
     }
 
     window.addEventListener("offline", (e) => {
       this.setState({
         isOnline: false,
-        isOffline: true
       })
     });
     
     window.addEventListener("online", (e) => {
       this.setState({
         isOnline: true,
-        isOffline: false
       })
     });
   }
@@ -28,7 +25,8 @@ export default class Page extends Component {
   render() {
     return (
       <div className="status">
-        {this.state.isOnline ? <Online /> : <Offline />}
+        <Online isOnline={this.state.isOnline} />
+        <Offline isOffline={this.state.isOnline} />
       </div>
     );
   };

@@ -12,7 +12,20 @@ export default class Page extends Component {
     }
   }
 
-  handleClick() {
+  handleLoginClick() {
+    this.setState({
+      isSpinnerShow: true,
+    });
+
+    setTimeout(() => {
+      this.setState({
+        isSpinnerShow: false,
+        isLogin: !this.state.isLogin,
+      })
+    }, 2000);
+  }
+
+  handleLogoutClick() {
     this.setState({
       isSpinnerShow: true,
     });
@@ -30,8 +43,8 @@ export default class Page extends Component {
       <div className="status">
         {((this.state.isSpinnerShow) && <Spinner size={50} />)
           || (this.state.isLogin 
-            ? <Login onLogin={this.handleClick.bind(this)} /> 
-            : <Logout onLogout={this.handleClick.bind(this)} />)}
+            ? <Login onLogin={this.handleLoginClick.bind(this)} /> 
+            : <Logout onLogout={this.handleLogoutClick.bind(this)} />)}
       </div>
     );
   };

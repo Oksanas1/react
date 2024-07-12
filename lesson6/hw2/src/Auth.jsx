@@ -27,15 +27,8 @@ export default class Page extends Component {
 
   handleLogoutClick() {
     this.setState({
-      isSpinnerShow: true,
+      isLogin: !this.state.isLogin,
     });
-
-    setTimeout(() => {
-      this.setState({
-        isSpinnerShow: false,
-        isLogin: !this.state.isLogin,
-      })
-    }, 2000);
   }
   
   render() {

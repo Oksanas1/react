@@ -17,13 +17,13 @@ export default class UsersList extends Component {
         sortType: 'asc',
       });
 
-      this.usersList.sort((a, b)=> a.props.age - b.props.age);
+      this.usersList.sort((a, b)=> b.props.age - a.props.age);
     } else {
       this.setState({
         sortType: 'desc'
       });
 
-      this.usersList.sort((a, b)=> b.props.age - a.props.age);
+      this.usersList.sort((a, b)=> a.props.age - b.props.age);
     }
   }
 

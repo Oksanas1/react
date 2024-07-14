@@ -12,15 +12,15 @@ export default class UsersList extends Component {
   }
 
   handleClick = () => {
-    if(this.state.sortType === 'asc') {
+    if(this.state.sortType === 'desc') {
       this.setState({
-        sortType: 'desc',
+        sortType: 'asc',
       });
 
       this.usersList.sort((a, b)=> a.props.age - b.props.age);
     } else {
       this.setState({
-        sortType: 'asc'
+        sortType: 'desc'
       });
 
       this.usersList.sort((a, b)=> b.props.age - a.props.age);

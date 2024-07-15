@@ -1,5 +1,5 @@
 import React from "react";
-const moment = require('moment');
+import moment from "moment";
 
 export default function Transaction({time, from, to, rate, amount}) {
   const timeDate = new Date(time);

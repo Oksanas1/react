@@ -3,10 +3,10 @@ import React, { Component } from 'react';
 export default class Life extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-        showComponent: true
-    }
     console.log('constructor: good place to create state');
+    this.state = {
+      data: null
+    };
   }
 
   componentDidMount() {
@@ -27,7 +27,11 @@ export default class Life extends Component {
   }
 
   render() {
-    console.log('return React element to build DOM')
-    return (<p>My Component</p>);
+    console.log('return React element to build DOM');
+    return (
+      <div>
+        Life Cycle Component
+      </div>
+    );
   }
 }

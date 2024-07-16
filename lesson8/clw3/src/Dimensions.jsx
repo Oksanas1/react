@@ -10,8 +10,7 @@ export default class Dimensions extends Component {
       heigth: innerHeight,
       width: innerWidth,
     };
-
-    document.title = `${innerWidth} x ${innerHeight}`
+    document.title = `${innerWidth}px - ${innerHeight}px`;
   }
 
   componentDidMount() {
@@ -30,7 +29,7 @@ export default class Dimensions extends Component {
       width: innerWidth,
     });
 
-    document.title = `${innerWidth} x ${innerHeight}`
+    document.title = `${innerWidth}px - ${innerHeight}px`;
   }
 
   render() {

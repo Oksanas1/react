@@ -1,0 +1,47 @@
+import React, { Component } from 'react';
+
+export default class Life extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      user: null,
+    };
+  }
+
+  componentDidMount() {
+    this.fetchUserId(this.props.userId);
+  }
+
+
+  fetchUserId = userId => {
+    fetch(`https://api.github.com/users/${userId}`)
+      .then(response => response.json())
+      .then(data => {
+        this.setState({user: data })
+      });
+  }
+
+  render() {
+    const { user } = this.state;
+    if(!user) {
+      return null;
+    }
+
+    const { avatar_url, name, location } = user;
+
+    return (
+      <div className="user">
+        <img
+          alt="User Avatar"
+          src={avatar_url}
+          className="user__avatar"
+        />
+        <div className="user__info">
+          <span className="user__name">{name}</span>
+          <span className="user__location">{location}</span>
+        </div>
+      </div>
+    );
+  }
+}

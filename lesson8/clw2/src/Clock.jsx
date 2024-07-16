@@ -10,6 +10,8 @@ export default class Clock extends Component {
   constructor(props) {
     super(props);
 
+    this.timerID = null
+
     this.state = {
       time: getTimeWithOffset(props.offset),
     };

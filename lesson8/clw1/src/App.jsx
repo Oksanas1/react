@@ -1,7 +1,7 @@
-import React, { Component }  from "react";
+import React from "react";
 import Life from "./Life";
 
-export default class App extends Component {
+export default class App extends React.Component {
   state = {
     showLife: true
   };

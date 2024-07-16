@@ -22,6 +22,6 @@ export default class App extends React.Component {
   };
 
   render() {
-    return this.state.isConnect ? (<div className="status">Online</div>) : (<div className="status status_offline">Offline</div>);
+    return this.state.isConnect ? (<div className="status">online</div>) : (<div className="status status_offline">offline</div>);
   }
 }

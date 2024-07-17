@@ -10,7 +10,7 @@ export default class UserForm extends React.Component {
     const checkboxes = Array.from(this.formRef.querySelectorAll('input[type="checkbox"]'));
     checkboxes.forEach(checkbox => {
       if (!formData.has(checkbox.name)) {
-        formEntries.push([checkbox.name, checkbox.checked]);
+        formEntries.push([checkbox.name, checkbox.value]);
       }
     });
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.scss';
-import UserList from './UserList';
+import UsersList from './UsersList';
 
 const generateUsers = () => {
   const users = [];
@@ -17,4 +17,4 @@ const generateUsers = () => {
 
 const rootElem = document.querySelector('#root');
 const root = ReactDOM.createRoot(rootElem);
-root.render(<UserList users={generateUsers()}/>);
+root.render(<UsersList users={generateUsers()} />);

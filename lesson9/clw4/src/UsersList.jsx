@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import User from "./User";
 import Filter from "./Filter";
 
-export default class UserForm extends Component {
+export default class UsersList extends Component {
   state = {
     filterText: '',
   }

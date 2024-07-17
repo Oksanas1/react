@@ -13,9 +13,9 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <form className="search">
+      <form className="search" onSubmit={() => alert(`Search text: ${this.state.textValue}`)}>
         <input type="text" className="search__input" onChange={this.handleChange.bind(this)} value={this.state.textValue} />
-        <button className="search__button" onClick={() => alert(`Search text: ${this.state.textValue}`)}>Search</button>
+        <button className="search__button">Search</button>
       </form>
     );
   }

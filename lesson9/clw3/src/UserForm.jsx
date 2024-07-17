@@ -4,24 +4,13 @@ export default class UserForm extends React.Component {
   handleSubmit = (event) => {
     event.preventDefault();
 
-    const formData = new FormData(this.formRef);
-    const formEntries = [...formData.entries()];
-
-    const checkboxes = Array.from(this.formRef.querySelectorAll('input[type="checkbox"]'));
-    checkboxes.forEach(checkbox => {
-      if (!formData.has(checkbox.name)) {
-        formEntries.push([checkbox.name, checkbox.value]);
-      }
-    });
-
-    const result = formEntries.reduce((acc, [name, value]) => ({...acc, [name]: value}), {});
-
-    this.props.onSubmit(result);
+    const formData = [...new FormData(this.formRef)].reduce((acc, [name, value]) => ({...acc, [name]: value}), {});
+    this.props.onSubmit(formData);
   };
 
   setRef = node => {
     this.formRef = node;
-  } 
+  };
 
   render() {
     return (

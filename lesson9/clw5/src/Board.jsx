@@ -2,7 +2,7 @@ import React from "react";
 import Square from "./Square";
 
 export default function Board({onSquareClick, squares}) {
-  const renderSquare = index => (<Square value={squares[index]} onSquareClick={() => onSquareClick(index)} />);
+  const renderSquare = index => (<Square key={index} value={squares[index]} onSquareClick={() => onSquareClick(index)} />);
 
   return (
     <div className="board">

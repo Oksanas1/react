@@ -10,7 +10,7 @@ export default class ShoppingCart extends Component {
   render() {
     return (
       <div className="column">
-        <CartTitle userName={this.props.userName} length={this.state.cartItems.length} />
+        <CartTitle userName={this.props.userName} count={this.state.cartItems.length} />
         <ProductsList cartItems={this.state.cartItems} />      
       </div>
     );

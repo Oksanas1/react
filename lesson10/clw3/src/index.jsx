@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.scss';
-import App from './App';
+import Calculator from './Calculator';
 
 const rootElem = document.querySelector('#root');
 const root = ReactDOM.createRoot(rootElem);
-root.render(<App />);
+root.render(<Calculator />);

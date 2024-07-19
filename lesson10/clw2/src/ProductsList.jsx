@@ -1,12 +1,12 @@
 import React from "react";
 
-const ProductsList = ({cartItems}) => {
-  const renderItem = (id, name, price) => (
-    <li key={id} className="products__list-item">
-      <span className="products__item-name">{name}</span>
-      <span className="products__item-price">{price}</span>
-    </li>);
+const renderItem = (id, name, price) => (
+  <li key={id} className="products__list-item">
+    <span className="products__item-name">{name}</span>
+    <span className="products__item-price">{price}</span>
+  </li>);
 
+const ProductsList = ({cartItems}) => {
   const count = cartItems.reduce((acc, value) => acc + +value.price.replace('$', ''), 0);
 
   return (

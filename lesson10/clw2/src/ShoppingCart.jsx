@@ -5,8 +5,8 @@ import CartTitle from "./CartTitle";
 export default class ShoppingCart extends Component {
   state = {
     cartItems: [
-      {id: 1, name: 'iPhone 11', price: '$999'},
-      {id: 2, name: 'iPad Pro', price: '$799'},
+      {id: 1, name: 'iPhone 11', price: 999},
+      {id: 2, name: 'iPad Pro', price: 799},
     ]
   }
 

@@ -3,11 +3,11 @@ import React from "react";
 const renderItem = (id, name, price) => (
   <li key={id} className="products__list-item">
     <span className="products__item-name">{name}</span>
-    <span className="products__item-price">{price}</span>
+    <span className="products__item-price">${price}</span>
   </li>);
 
 const ProductsList = ({cartItems}) => {
-  const count = cartItems.reduce((acc, value) => acc + +value.price.replace('$', ''), 0);
+  const count = cartItems.reduce((acc, {price}) => acc + price, 0);
 
   return (
     <div className="products">

@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function UserForm({userData, onChange}) {
+const UserForm = ({userData, onChange}) => {
   return (
     <form className="user-form">
       <input type="text" name="firstName" className="user-form__input" value={userData.firstName} onChange={onChange} />
@@ -8,3 +8,5 @@ export default function UserForm({userData, onChange}) {
     </form>
   );
 }
+
+export default UserForm;

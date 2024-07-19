@@ -11,7 +11,7 @@ export default class ShoppingCart extends Component {
   }
 
   render() {
-    const cartItems = this.state.cartItems;
+    const { cartItems } = this.state;
     return (
       <div className="column">
         <CartTitle userName={this.props.userName} count={cartItems.length} />

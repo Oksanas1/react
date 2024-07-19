@@ -11,16 +11,14 @@ export default class App extends React.Component {
   };
 
   handleChange = (e) => {
-    const target = e.target;
-    const name = target.name;
-    const value = target.value;
+    const {name , value} = e.target;
 
-    this.setState((prevState) => ({
+    this.setState({
       userData: {
-        ...prevState.userData,
+        ...this.state.userData,
         [name]: value,
       } 
-    }));
+    });
   }
 
   render() {

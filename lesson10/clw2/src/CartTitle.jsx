@@ -1,9 +1,11 @@
 import React from "react";
 
-export default function CartTitle({userName, count}) {
+const CartTitle = ({userName, count}) => {
   return (
     <div className="cart-title">
       {`${userName}, you added ${count} items`}
       </div>
   );
 }
+
+export default CartTitle;

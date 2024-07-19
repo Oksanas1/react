@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function ProductsList({cartItems}) {
+const ProductsList = ({cartItems}) => {
   const renderItem = (id, name, price) => (
     <li key={id} className="products__list-item">
       <span className="products__item-name">{name}</span>
@@ -18,3 +18,5 @@ export default function ProductsList({cartItems}) {
   </div>
   );
 }
+
+export default ProductsList;

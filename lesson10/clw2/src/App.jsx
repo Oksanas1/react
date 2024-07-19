@@ -11,12 +11,14 @@ export default class App extends React.Component {
   };
 
   handleChange = (e) => {
-    const targets = e.target;
+    const target = e.target;
+    const name = target.name;
+    const value = target.value;
 
     this.setState((prevState) => ({
       userData: {
         ...prevState.userData,
-        [targets.name]: targets.value,
+        [name]: value,
       } 
     }));
   }
@@ -27,8 +29,8 @@ export default class App extends React.Component {
       <div className="page">
         <h1 className="title">Hello, {userData.firstName} {userData.lastName}</h1>
         <main className="content">
-          <ShoppingCart userName={userData.firstName}/>
-          <Profile userData={userData} onChange={this.handleChange}/>
+          <ShoppingCart userName={userData.firstName} />
+          <Profile userData={userData} onChange={this.handleChange} />
         </main>
       </div>
     );

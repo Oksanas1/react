@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import SearchBar from "./SearchBar";
 import ProductTable from "./ProductTable";
+import productsData from './productsData';
 
 class FilterableProductTable extends Component {
   state = {
@@ -8,30 +9,37 @@ class FilterableProductTable extends Component {
     inStockOnly: false,
   }
 
-  handleChangeFilter = (e) => {
-    const target = e.target;
-    const value = target.type === 'checkbox' ? target.checked : target.value;
-
+  handleFilterTextChange = (value) => {
     this.setState({
-      [target.name]: value,
+      filterText: value,
+    });
+  }
+
+  handleInStockChange = (value) => {
+    this.setState({
+      inStockOnly: value,
     });
   }
 
   render() {
     const { filterText, inStockOnly } = this.state;
+
     return (
       <div>
         <SearchBar 
           filterText={filterText} 
           inStockOnly={inStockOnly} 
-          onHandleChangeFilter={this.handleChangeFilter} />
+          onFilterTextChange={this.handleFilterTextChange} 
+          onInStockChange={this.handleInStockChange} 
+        />
         <ProductTable 
-          products={this.props.products} 
-          filterText={filterText}
-          inStockOnly={inStockOnly} />
+          products={productsData} 
+          filterText={filterText} 
+          inStockOnly={inStockOnly} 
+        />
       </div>
     );
-  };
+  }
 }
 
 export default FilterableProductTable;

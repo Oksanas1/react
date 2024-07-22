@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const ProductCategoryRow = ({ category }) => {
   return (
@@ -8,6 +8,6 @@ const ProductCategoryRow = ({ category }) => {
       </th>
     </tr>
   );
-};
+}
 
 export default ProductCategoryRow;

@@ -13,10 +13,11 @@ class Expand extends Component {
   }
 
   render() {
+    const { title, children } = this.props;
     return (
       <div className="expand border">
         <div className="expand__header">
-          <span className="expand__title">{this.props.title}</span>
+          <span className="expand__title">{title}</span>
           <button className="expand__toggle-btn" onClick={this.toggleIsOpen}>
             {this.state.isOpen 
               ? <i className="fas fa-chevron-up">-</i>
@@ -24,11 +25,16 @@ class Expand extends Component {
           </button>
         </div>
         <div className="expand__content">
-          {this.state.isOpen && this.props.children}
+          {this.state.isOpen && children}
         </div>
       </div>
     );
   };
 }
+
+Expand.propTypes = {
+  isOpen: PropTypes.bool.isRequired,
+  children: PropTypes.element.isRequired
+};
 
 export default Expand;

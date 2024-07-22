@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 class EvenNumbers extends Component {
   shouldComponentUpdate(nextProps) {
-    return nextProps.number % 2 > 0;
+    return nextProps.number % 2 === 0;
   }
 
   render() {

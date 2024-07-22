@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import SearchBar from "./SearchBar";
 import ProductTable from "./ProductTable";
-import productsData from './productsData';
+import PRODUCTS from './productsData'
 
 class FilterableProductTable extends Component {
   state = {
@@ -33,7 +33,7 @@ class FilterableProductTable extends Component {
           onInStockChange={this.handleInStockChange} 
         />
         <ProductTable 
-          products={productsData} 
+          products={PRODUCTS} 
           filterText={filterText} 
           inStockOnly={inStockOnly} 
         />

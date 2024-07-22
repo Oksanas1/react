@@ -1,31 +1,41 @@
-import React from 'react';
-import ProductCategoryRow from './ProductCategoryRow';
-import ProductRow from './ProductRow';
+import React from "react";
+import ProductCategoryRow from "./ProductCategoryRow";
+import ProductRow from "./ProductRow";
 
 const ProductTable = ({ products, filterText, inStockOnly }) => {
-  let lastCategory = null;
   const rows = [];
+  let lastCategory = null;
 
-  products.filter(
-      ({name, stocked}) => name.includes(filterText) && !(inStockOnly && !stocked))
-    .forEach(product => {
-      const { name, category } = product;
+  products.forEach((product) => {
+    const {name, category, stocked} = product;
+    
+    if (
+      name.toLowerCase().indexOf(
+        filterText.toLowerCase()
+      ) === -1
+    ) {
+      return null;
+    }
 
-      if (category !== lastCategory) {
-        rows.push(
-          <ProductCategoryRow
-            category={category}
-            key={category} />
-        );
-      }
+    if (inStockOnly && !stocked) {
+      return null;
+    }
 
+    if (category !== lastCategory) {
       rows.push(
-        <ProductRow
-          product={product}
-          key={name} />
+        <ProductCategoryRow
+          category={category}
+          key={category} />
       );
+    }
 
-      lastCategory = category;
+    rows.push(
+      <ProductRow
+        product={product}
+        key={name} />
+    );
+
+    lastCategory = category;
   });
 
   return (
@@ -39,6 +49,6 @@ const ProductTable = ({ products, filterText, inStockOnly }) => {
       <tbody>{rows}</tbody>
     </table>
   );
-};
+}
 
 export default ProductTable;

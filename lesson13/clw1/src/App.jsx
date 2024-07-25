@@ -5,19 +5,19 @@ import Products from "./Products";
 import Contacts from "./Contacts";
 import PageNotFound from './PageNotFound';
 
-const App = () => {  
+const App = () => {
   return (
-    <div className="page">
-      <Router>
+    <Router>
+      <div className="page">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/products" element={<Products />} />
           <Route path="/contacts" element={<Contacts />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
-      </Router>
-    </div>
+      </div>
+    </Router>
   );
-}
+};
 
 export default App;

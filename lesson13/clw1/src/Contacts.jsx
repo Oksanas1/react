@@ -1,5 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Contacts = () => {
   return (
@@ -9,6 +9,6 @@ const Contacts = () => {
       <Link to="/">Go home</Link>
     </div>
   );
-}
+};
 
 export default Contacts;

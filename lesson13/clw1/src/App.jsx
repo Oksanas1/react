@@ -7,16 +7,16 @@ import PageNotFound from './PageNotFound';
 
 const App = () => {  
   return (
-    <Router>
-      <div className="page">
+    <div className="page">
+      <Router>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/products" element={<Products />} />
           <Route path="/contacts" element={<Contacts />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
-      </div>
-    </Router>
+      </Router>
+    </div>
   );
 }
 

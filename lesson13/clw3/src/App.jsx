@@ -4,8 +4,8 @@ import Home from './Home';
 import Users from './Users';
 
 const App = () => (
-  <Router>
-    <div className="page">
+  <div className="page">
+    <Router>
       <ul className="navigation">
         <li className="navigation__item">
           <Link to="/">Home</Link>
@@ -20,8 +20,8 @@ const App = () => (
           <Route path="/users" component={Users} />
         </Switch>
       </div>
-    </div>
-  </Router>
+    </Router>
+  </div>
 );
 
 export default App;

@@ -2,15 +2,15 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
 const User = () => {
-  const { userId } = useParams();
+  const { usersId } = useParams();
   const [userData, setUserData] = useState(null);
 
   useEffect(() => {
-    fetch(`1https://api.github.com/users/${userId}`)
+    fetch(`https://api.github.com/users/${usersId}`)
       .then(response => response.json())
       .then(data => setUserData(data))
       .catch(error => console.error('Error fetching user data:', error));
-  }, [userId]);
+  }, [usersId]);
 
   if (!userData) {
     return <div>Loading...</div>;

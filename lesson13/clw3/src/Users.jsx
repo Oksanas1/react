@@ -20,7 +20,7 @@ const Users = () => {
         <Route exact path={path}>
           <span>Select a user please</span>
         </Route>
-        <Route path={`${path}/:userId`} component={User} />
+        <Route path={`${path}/:usersId`} component={User} />
       </Switch>
     </div>
   );
